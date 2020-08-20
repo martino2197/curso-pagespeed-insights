@@ -1,0 +1,669 @@
+/* reglas
+selectores
+declaraciones
+propiedades
+valores */
+
+
+/* seletor de etiqueta  header - section - article - nav */
+/* header {
+  background: pink;
+  color: red
+} */
+
+/* selector descendente  */
+/* body header div nav ol li a  */
+
+/* selector de clase . */
+
+/* .link */
+
+/* selector de id # */
+/* #portafolio */
+
+
+
+/* gris oscuro = #1d252c */
+/* gris claro = #626262 */
+/* background gris = #1b2127 */
+/* celeste = #026fff */
+
+@font-face { /*Gracias a este modulo de css nosotros podemos crear fuentes personalizadas*/
+  font-family: 'icomoon'; /*Este es el nombre de la fuente*/
+  /* Lo que sigue es ver que fuente se va aplicar dependiendo de cada tipo de navegador */
+  src:  url('../fonts/icomoon.eot?fynqng');
+  src:  url('../fonts/icomoon.eot?fynqng#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?fynqng') format('truetype'),
+    url('../fonts/icomoon.woff?fynqng') format('woff'),
+    url('../fonts/icomoon.svg?fynqng#icomoon') format('svg');
+  /* Lo que sigue es ver que fuente se va aplicar dependiendo de cada tipo de navegador */
+
+  /*Va el tipo y estilo de la fuente*/
+  font-weight: normal; 
+  font-style: normal;
+  font-display: block;
+}
+
+/*Este selecto es avanzado, 'Cualquier elemento que tenga una clase que empiece con icon- o cualquier clase que en alguna parte de su nombre tenga un icon-'*/
+/*Ejemplo: icon-menu o button-icon-menu*/
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important; /*Les asigna este font-family*/
+  speak: never; /*Porque solo va a ser un icono*/
+  /*Aqui van los tipos de fuente que va asignarse */
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /*Estas lineas son para el renderizado de la fuente*/
+}
+
+/*Cada icono que vamos a tener lo va a generar una clase como esta*/
+.icon-menu:before {
+  content: "\e900"; /*va insertar un content con esta entidad html*/
+}
+
+
+/*-------------------------------------------------------------*/
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  margin: 0;
+}
+
+h1, 
+h2,
+h3,
+h4,
+h5,
+h6{
+  font-family: 'Fjalla One', sans-serif;
+  font-weight: normal;
+  /* font-style: italic; */
+}
+
+h1 {
+  font-size: 40px;
+  line-height: 1.5;
+  letter-spacing: -.2px;
+  color: white;
+  margin: 0;
+  /* margin: 100px 150px 70px 30px; */
+  /* text-transform: uppercase; */
+  /* text-decoration: dashed; */
+}
+h1 strong {
+  color: #026fff;
+}
+h2 {
+  color: #026fff;
+  text-transform: uppercase;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+
+.hero {
+  height: 300px;
+  /* background-image: url('../images/hero.jpg'); */
+  background-color: #1b2127;
+  /* background-size: 500px 300px; */
+  /* background-repeat: no-repeat; */
+  /* background-position-x: right; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  flex-wrap: wrap; /*RESPONSIVE DESIGN*/
+}
+
+.hero-image{
+  object-fit: cover;
+}
+
+
+.portfolio {
+  background: #fafafa;
+  padding: 20px;
+  /* background: red; */
+}
+
+.project {
+  /* border-top: 10px solid red;
+  border-right: 10px solid green;
+  border-left: 10px solid orange;
+  border-bottom: 10px solid pink; */
+  /* color: blue; */
+  /* border-top-color: red;
+  border-top-width: 15px;
+  border-top-style: solid; */
+  border: 1px solid gray;
+  border-radius: 10px;
+  /* border-top-left-radius: 50px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px; */
+  /* margin: 10px; */
+  margin-bottom: 15px;
+  /* margin-right
+  margin-left 
+  margin-top */
+  padding: 20px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  flex-wrap: wrap; /*RESPONSIVE DESIGN*/
+}
+.project-course,
+.project-date,
+.project-url {
+  margin: 10px 0;
+}
+.project-description {
+  font-size: 20px;
+}
+.project strong {
+  font-family: 'Fjalla One', sans-serif;
+}
+/* .project-date {
+  margin: 10px 0;
+} */
+
+.project-title {
+  font-size: 30px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+
+.project-details {
+  /* width: 500px; */
+  width: 50%; /*RESPONSIVE DESIGN*/
+}
+
+.project-imageContainer {
+  /* width: 500px; */
+  width: 50%; /*RESPONSIVE DESIGN*/
+}
+
+/*RESPONSIVE DESIGN para imagenes dentro de un container*/
+.project-imageContainer img {
+  max-width: 100%;
+}
+/*RESPONSIVE DESIGN para imagenes dentro de un container*/
+
+
+.header {
+  background-color: #1b2127;
+  color: white;
+  display: flex;
+  height: 70px;
+  align-items: center;
+  justify-content: space-between;
+
+
+  flex-wrap: wrap; /*RESPONSIVE DESIGN*/
+
+}
+
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+figure {
+  margin: 0;
+}
+
+.header a {
+  color: white;
+  text-decoration: none;
+}
+.menu {
+  height: inherit;
+}
+.header ol {
+  display: flex;
+  height: inherit;
+}
+.header ol li {
+  height: inherit;
+}
+.header a {
+  display: flex;
+  align-items: center;
+  height: inherit;
+  padding: 0 10px;
+}
+
+.flexbox {
+  display: flex;
+  /* flex-wrap: nowrap; */
+  flex-wrap: wrap;
+  /* flex-direction: column; */
+}
+
+.box {
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  border: 1px solid red;
+
+  flex-shrink: 0;
+}
+
+.footer {
+  color: white;
+  background-color: #1b2127;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  flex-wrap: wrap; /*RESPONSIVE DESIGN*/
+}
+
+.footer img {
+  vertical-align: middle;
+}
+
+.footer a {
+  color: white;
+}
+
+.event-list {
+  display: flex;
+  flex-wrap: wrap; /*NOS AYUDA A QUE LOS ELEMENTOS CON DISPLAY FLEX (LOS HIJOS), SE APILEN UNO ABAJO DEL OTRO CUANDO YA NO HAY ESPACIO EN EL CONTENEDOR. SIN ESTA PROPIEDAD LOS HIJOS DE COLOCARIAN UNO AL LADO DEL OTRO.*/
+}
+.event-list-title {
+  margin-left: 20px;
+}
+.event { 
+  margin: 1%; /*RESPONSIVE DESIGN*/
+  width: 48%; /*RESPONSIVE DESIGN*/
+
+  /* margin: 10px;
+  width: 480px; */
+
+  flex-shrink: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #f4fbff;
+}
+.event img {
+  width: 480px;
+  height: 200px;
+  object-fit: cover;
+}
+.event-detail {
+  margin: 20px 40px;
+  margin-top: -40px;
+  background-color: white;
+  position: relative;
+  padding: 20px;
+  text-align: center;
+}
+.event-description {
+  text-align: left;
+}
+
+.event-url {
+  color: #056fff;
+  border: 1px solid;
+  padding: 5px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.contact {
+  background-color: #056fff;
+  color: white;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  flex-wrap: wrap; /*RESPONSIVE DESIGN*/
+}
+
+.social {
+}
+
+.social-link {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin: 0 10px;
+  background-size: 50px 50px;
+}
+
+.social-link.twitter {
+  background-image: url('../images/twitter.svg');
+}
+.social-link.facebook {
+  background-image: url('../images/facebook.svg');
+}
+.social-link.github {
+  background-image: url('../images/github.svg');
+}
+.social-link.instagram {
+  background-image: url('../images/instagram.svg');
+}
+
+
+.form-email input {
+  border-color: gray;
+  border-style: solid;
+  border-radius: 5px;
+  padding: 10px 20px 10px 25px;
+  background-image: url('../images/envelope.svg');
+  background-size: 15px 15px;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: 5px;
+}
+
+.form-email button {
+  display: block;
+  background: transparent;
+  color: white;
+  padding: 10px 0;
+  border-radius: 5px;
+  width: 100px;
+  margin-top: 10px;
+}
+
+.form-email h3 { 
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.container {
+  /* border: 1px solid red; */
+
+  /*RESPONSIVE DESIGN*/
+  max-width: 1000px; 
+
+  /* width: 100%; */
+  flex: 1; /*Que el elemento tome el ancho disponible que tenga dentro del elemento, en vez de width: 100%*/
+
+  /*RESPONSIVE DESIGN*/
+
+
+  /* width: 1000px; */
+  margin: 0 auto;
+  display: inherit;
+  justify-content: inherit;
+  align-items: inherit;
+  height: inherit;
+  flex-wrap: inherit;
+}
+
+/* desktop first que empieces desde el MQ más grande */
+.html-video {
+  width: 100%;
+  height: auto;
+  /* max-width: 100%; */
+}
+
+.youtube-video {
+  /* width: 100%; */
+  /* height: auto; */
+
+  /*Hacemos que nuestro video de youtube se estire*/
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  /*Hacemos que nuestro video de youtube se estire*/
+
+  width: 100%;
+  height: 100%;
+}
+.flexible-video {
+  width: 100%;
+  height: 0;
+  padding-top: 56.25%; /*Esto se calcula con las medidas del video de youtube => h*100/w */
+  background: blue;
+  position: relative; /*Las funciones absolutas tienen que ser relativas a algo, por eso le damos una position relative a flexible-video, ya que youtube-video tiene position absolute*/
+}
+
+
+
+.burger-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.8);
+  /*Centrar el icono dentro del circulo*/
+  display: none; /*PARA QUE NO SE MUESTRE POR DEFECTO*/
+  line-height: 40px;
+  text-align: center;
+  /*tambien se puede hacer de la sig. manera*/
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  /*Centrar el icono dentro del circulo*/
+
+  /*Lo siguiente es para que nuesto icono nos pueda seguir durante el scroll*/
+  position: fixed;
+  z-index: 4;
+  left: 5px;
+  top: 5px;
+
+  color: white; /*Ya que es una fuente le podemos poner color al icono*/
+  /* font-size: 50px; */
+
+}
+
+@media screen and (max-width: 1023px) {
+
+  .event-list-title {
+    margin-left: 0;
+  }
+
+  .portfolio {
+    padding: 0;
+  }
+
+  .container {
+    padding: 0 0.8em; /*De esta manera cuando estemos en modo responsive nuestro contenedor va a tener y heredar a sus hijos un padding de 0.8em para que no esten tan pegado el contenido hacia los lateraless*/
+  }
+
+  .hero {
+    height: auto; /*le damos una altura en auto a nuesto hero*/
+    position: relative; /*Las funciones absolutas tienen que ser relativas a algo, por eso le damos una position relative a hero, ya que hero-image tiene position absolute*/
+
+    overflow: hidden; /*Que este oculto lo desbordado, en este caso se trata de la imagenx*/
+    padding: 2em; /*Para que las dentro del hero tengan espacio a su alrededor*/
+  }
+  /*empleamos css position y dejamos volando hacia atras la imagen dentro del hero*/
+  .hero-image {
+    position: absolute;
+    z-index: 1; /*Este z-index es menor al de h1 y por lo tanto va a estar por debajo del texto*/
+
+    /*Con esto logramos que el elemento se estire en todas sus direcciones*/
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0; 
+    /*Con esto logramos que el elemento se estire en todas sus direcciones*/
+
+    width: 100%; /*Forzamos su tamaño para que ocupe todo su contenedor*/
+    
+  }
+  h1 {
+    font-size: 2em;
+    z-index: 2; /*Este z-index es mayor al de hero-image y por lo tanto va a estar por encima de la imagen*/
+  }
+  /*empleamos css position y dejamos volando hacia atras la imagen dentro del hero*/
+
+}
+
+@media screen and (max-width: 767px) { /*767 para que resoluciones mas bajas que un ipad tomen esta media querie*/
+
+  h2 {
+    font-size: 1.2em;
+    margin: 0.5em 0;
+  }
+
+  
+  .burger-button {
+    display: block; /*PARA QUE SE MUESTRE EL BOTON DE MENU*/
+  }
+
+  .header {
+    display: block; /*cambiamos de flex a block*/
+    height: auto; /*quitamos la altura de 70px y ponemos auto a la propiedad*/
+  }
+  .header ol {
+    display: block; /*Cambiamos el display flex con initial para que regrese al por defecto: inline*/
+  }
+  .header ol li {
+    height: 50px;
+  }
+  .header a {
+    justify-content: center;
+    height: 50px; /*Aqui va el estilo del texto del  menu*/
+    font-size: 2em;
+    text-decoration: underline;
+    margin-bottom: 0.5em;
+  }
+  .header .logo {
+    text-align: center;
+  }
+
+  .menu {
+    position: fixed;
+    background-color: rgba(5, 111, 255, 0.9);
+    z-index: 3;
+    top: 0; /*comienza desde arriba sin ningun margen*/
+    /* left: 0; comienza desde la izquierda sin ningun margen */
+    width: 100vw; /*De esta manera el menu abarca el 100% de ancho del viewport*/
+    /* height: 100vh; De esta manera el menu abarca el 100% de alto del viewport */
+    bottom: 0; /*Esta es otra forma de abarcar toda la altura*/
+    /*Centramos los elementos de nuestro menu*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /**/
+    left: -100vw; /*esto es para ocultar nuestro menu hacia la izquierda y que no este visible*/
+
+    transition: 0.3s;
+  }
+  .menu.is-active { /*Cuando ponemos . y sin espacios ponemos el otro punto, cuando el elemnto tenga las dos clases*/
+
+    left: 0; /*comienza desde la izquierda sin ningun margen*/
+  }
+
+  .project { /*De esta manera al momento de pasar a una pantalla mas pequeña que la de un ipad vamos a poner el texto encima de la imagen del, lo que sigue es ajustar estos elementos a su nueva posición*/
+    display: block; /*NOTA: SIEMPRE ES MEJOR TENER UN DISPLAY: BLOCK PARA EL RENDIMIENTO DE RENDER DENTRO DEL NAVEGADOR*/
+  }
+  .project-imageContainer { /*De esta manera el contenedor de la imagen va abarcar el todo el ancho de su contenedor padre y la imagen se ajustara hacia el centro*/
+    width: auto; /*NOTA: SIEMPRE ES MEJOR WIDTH: AUTO QUE WIDTH: 100%* PARA EL RENDIMIENTO DE RENDER DENTRO DEL NAVEGADOR*/
+    text-align: center;
+  }
+  .project-details { /*De esta manera el contenedor del texto va abarcar el todo el ancho de su contenedor padre y el texto se ajustara en el nuevo ancho*/
+    width: auto; /*NOTA: SIEMPRE ES MEJOR WIDTH: AUTO QUE WIDTH: 100%* PARA EL RENDIMIENTO DE RENDER DENTRO DEL NAVEGADOR*/
+    font-size: 16px;
+  }
+  /*font-size responsive*/
+  .project-title {
+    font-size: 1.5em;
+    margin-bottom: 0.4em; /*Margin responsive*/
+  }
+  .project-course {
+    font-size: 1.1em;
+  }
+  .project-date {
+    font-size: 1em;
+  }
+  .project-url {
+    font-size: 1em;
+  }
+  .project-description {
+    font-size: 1em;
+  }
+  /*font-size responsive*/
+
+  /*Margin responsive*/
+  .project-course, .project-date, .project-url {
+    /* margin: 10px 0; */
+    margin: 0.4em 0;
+  }
+  /*Margin responsive*/
+
+  .event {
+    width: auto;
+    flex-shrink: initial; /* Esta propiedad sirve para que el elemento no haga ningun tipo de resize y es una propiedad que se hereda desde los paadres que tienen display flex. El initial para resetearlo es para quitar esa propiedad, tambien podria darle un valor de 1.*/
+  }
+  .event img { /*Cuando agregamos una medida a un selector hijo de etiqueta, y queremos hacer una configuración posterior pero con el selector de clase, el selector de etiqueta prevalece y vale más, por lo que se debe hacer la reconfiguración con el selector de etiqueta. Ej: .event-image valdra en este caso menos que .event img*/
+    width: 100%;
+    /*Extras de la comunidad*/
+    max-height: 250px;
+    object-position: 25% 25%;
+    /*enfocar la imagen en la cara de Leonidas*/
+    /*Extras de la comunidad*/
+  }
+
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 1.5em;
+  }
+
+  .project-details {
+    font-size: 14px;
+  }
+
+  .event-detail {
+    margin: -2em 0.5em 0.5em; /*Hacemos los margenes de forma relativa Top Right Bottom (left: toma el mismo de Right)*/
+    padding: 1em;
+  }
+
+  .contact {
+    height: auto; /*Hacemos que la altura de contacto cambien cuando este por debajo de 480px*/
+    padding: 1em 0px; /* le damos un margin top y un margin bottom */
+    display: block; /*Cambiamos el display flex por un display block para poder usar la propiedad text-align: ;*/
+    text-align: center; /*centramos nuestro contenido*/
+  }
+  .form-email button { /*nuestro boton aun no se centra debido a que apesar de que el display es block el boton no tiene margenes y por eso no puede centrarse*/
+    margin: 1em auto; /*Le damos margenes  a nuestro boton y de esta manera logramos centrarlo.*/
+  }
+  .form-email h3 {
+    margin-top: 0; /*Quitamos el margen superio de ese titulo para que coincidan los margenes de arriba y de abajo*/
+  }
+  .footer {
+    display: block; /*Cambiamos el display flex por un block para que nuestros elementos se empiecen a apilar de forma automatica*/
+    text-align: center; /*Centramos nuestros elementos del footer*/
+    /*lo anterior nos causo un problema con los margenes, aqui abajo vienen varias soluciones posibles*/
+    /* padding: 1px; */
+    border: 1px solid transparent;
+  }
+
+  .social-link { /*Aqui redimensionamos los iconos de redes sociales*/
+    width: 40px;
+    height: 40px;
+    background-size: 100%; /*con esta linea el backgroud abarcara los 40px de ancho y de alto*/
+  }
+}
+
+@media screen and (max-width: 320px) {
+  h1 {
+    font-size: 1.2em;
+  }
+  .hero {
+    padding: 2em 1em;
+  }
+}
